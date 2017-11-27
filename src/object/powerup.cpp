@@ -135,18 +135,24 @@ PowerUp::collision(GameObject& other, const CollisionHit&)
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/airflower/airflower.sprite") {
     if(!player->add_bonus(AIR_BONUS, true))
+
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/earthflower/earthflower.sprite") {
-    if(!player->add_bonus(EARTH_BONUS, true))
+    if(!player->add_bonus(EARTH_BONUS, true)){
+      player->get_status()->add_coins(-100);// my adding
       return FORCE_MOVE;
+
+    }
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/star/star.sprite") {
     player->make_invincible();
   } else if (sprite_name == "images/powerups/1up/1up.sprite") {
     player->get_status()->add_coins(100);
   } else if (sprite_name == "images/powerups/potions/red-potion.sprite") {
-    scripting::Level_flip_vertically();
+  	player->get_status()->add_coins(1000);// my adding
+    //scripting::Level_flip_vertically();
+    return FORCE_MOVE;
   }
 
   remove_me();
