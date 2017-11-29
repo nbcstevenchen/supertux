@@ -26,6 +26,29 @@
 #include "supertux/object_factory.hpp"
 #include "supertux/sector.hpp"
 #include "util/reader_mapping.hpp"
+#include "object/player.hpp"
+
+#include "audio/sound_manager.hpp"
+#include "badguy/badguy.hpp"
+#include "control/input_manager.hpp"
+#include "editor/editor.hpp"
+#include "math/random_generator.hpp"
+#include "object/bullet.hpp"
+#include "object/camera.hpp"
+#include "object/display_effect.hpp"
+#include "object/falling_coin.hpp"
+#include "object/particles.hpp"
+#include "object/portable.hpp"
+#include "object/sprite_particle.hpp"
+#include "scripting/squirrel_util.hpp"
+#include "supertux/game_session.hpp"
+#include "supertux/gameconfig.hpp"
+#include "supertux/sector.hpp"
+#include "supertux/tile.hpp"
+#include "trigger/climbable.hpp"
+
+#include <math.h>
+
 
 #include <sstream>
 
