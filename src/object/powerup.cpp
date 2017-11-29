@@ -126,20 +126,22 @@ PowerUp::collision(GameObject& other, const CollisionHit&)
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/grow.ogg");
   } else if (sprite_name == "images/powerups/fireflower/fireflower.sprite") {
+    player_status->coins -= 100;
     if(!player->add_bonus(FIRE_BONUS, true))
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/iceflower/iceflower.sprite") {
+    player_status->coins -= 100;
     if(!player->add_bonus(ICE_BONUS, true))
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/airflower/airflower.sprite") {
+    player_status->coins -= 100;
     if(!player->add_bonus(AIR_BONUS, true))
-
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
   } else if (sprite_name == "images/powerups/earthflower/earthflower.sprite") {
-    player->get_status()->add_coins(-100);// my adding
+    player_status->coins -= 100;// my adding
     if(!player->add_bonus(EARTH_BONUS, true))
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
