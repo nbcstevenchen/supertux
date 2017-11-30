@@ -75,6 +75,7 @@ PlayerStatus::check_coins()
   else{
   	return false;
   }
+}
   
 void
 PlayerStatus::lose_coins(int count)
