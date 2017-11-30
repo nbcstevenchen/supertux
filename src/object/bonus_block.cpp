@@ -250,24 +250,28 @@ BonusBlock::try_open(Player *player)
 
     case CONTENT_FIREGROW:
     {
+      player->get_status()->lose_coins(100);// my adding
       raise_growup_bonus(player, FIRE_BONUS, direction);
       break;
     }
 
     case CONTENT_ICEGROW:
     {
+      player->get_status()->lose_coins(100);// my adding
       raise_growup_bonus(player, ICE_BONUS, direction);
       break;
     }
 
     case CONTENT_AIRGROW:
     {
+      player->get_status()->lose_coins(100);// my adding
       raise_growup_bonus(player, AIR_BONUS, direction);
       break;
     }
 
     case CONTENT_EARTHGROW:
     {
+      player->get_status()->lose_coins(100);// my adding
       raise_growup_bonus(player, EARTH_BONUS, direction);
       break;
     }
