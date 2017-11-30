@@ -66,6 +66,16 @@ void PlayerStatus::reset()
   displayed_coins = DISPLAYED_COINS_UNSET;
 }
 
+bool 
+PlayerStatus::check_coins()
+{
+  if(coins >= 100){
+    return true;
+  }
+  else{
+  	return false;
+  }
+  
 void
 PlayerStatus::lose_coins(int count)
 {
