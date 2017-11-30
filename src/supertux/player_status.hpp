@@ -45,6 +45,7 @@ public:
   PlayerStatus();
   ~PlayerStatus();
   void reset();
+  bool check_coins();
   void add_coins(int count, bool play_sound = true);
   void lose_coins(int count);
 
