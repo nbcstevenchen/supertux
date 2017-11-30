@@ -75,7 +75,7 @@ PlayerStatus::lose_coins(int count)
 void
 PlayerStatus::add_coins(int count, bool play_sound)
 {
-  coins = std::min(coins - count, MAX_COINS);
+  coins = std::max(coins - count, 0);
 
   if(!play_sound)
     return;
