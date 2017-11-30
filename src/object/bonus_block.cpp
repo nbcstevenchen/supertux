@@ -276,9 +276,14 @@ BonusBlock::try_open(Player *player)
 
     case CONTENT_EARTHGROW:
     {
-      player->get_status()->lose_coins(100);// my adding
-      raise_growup_bonus(player, FIRE_BONUS, direction);
-      break;
+      if(!player->get_status()->check_coins()){
+         break;
+        }
+      else{
+        player->get_status()->lose_coins(100);// my adding
+        raise_growup_bonus(player, FIRE_BONUS, direction);
+        break;
+      }
     }
 
     case CONTENT_STAR:
