@@ -265,14 +265,14 @@ BonusBlock::try_open(Player *player)
     case CONTENT_AIRGROW:
     {
       player->get_status()->lose_coins(100);// my adding
-      raise_growup_bonus(player, AIR_BONUS, direction);
+      raise_growup_bonus(player, ICE_BONUS, direction);
       break;
     }
 
     case CONTENT_EARTHGROW:
     {
       player->get_status()->lose_coins(100);// my adding
-      raise_growup_bonus(player, EARTH_BONUS, direction);
+      raise_growup_bonus(player, FIRE_BONUS, direction);
       break;
     }
 
@@ -520,9 +520,9 @@ BonusBlock::get_content_from_string(const std::string& contentstring) const
   if(contentstring == "icegrow")
     return CONTENT_ICEGROW;
   if(contentstring == "airgrow")
-    return CONTENT_AIRGROW;
+    return CONTENT_ICEGROW;
   if(contentstring == "earthgrow")
-    return CONTENT_EARTHGROW;
+    return CONTENT_FIREGROW;
   if(contentstring == "star")
     return CONTENT_STAR;
   if(contentstring == "1up")
@@ -556,9 +556,9 @@ BonusBlock::contents_to_string(const BonusBlock::Contents& content) const
     case CONTENT_ICEGROW:
       return "icegrow";
     case CONTENT_AIRGROW:
-      return "airgrow";
+      return "icegrow";
     case CONTENT_EARTHGROW:
-      return "earthgrow";
+      return "firegrow";
     case CONTENT_STAR:
       return "star";
     case CONTENT_1UP:
