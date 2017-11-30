@@ -149,7 +149,7 @@ PowerUp::collision(GameObject& other, const CollisionHit&)
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/grow.ogg");
   } else if (sprite_name == "images/powerups/fireflower/fireflower.sprite") {
-    player->get_status()->add_coins(100);// my adding
+    player->get_status()->lose_coins(100);// my adding
     if(!player->add_bonus(FIRE_BONUS, true))
       return FORCE_MOVE;
     SoundManager::current()->play("sounds/fire-flower.wav");
