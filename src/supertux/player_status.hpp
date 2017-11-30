@@ -46,6 +46,7 @@ public:
   ~PlayerStatus();
   void reset();
   void add_coins(int count, bool play_sound = true);
+  void lose_coins(int count);
 
   void write(Writer& writer);
   void read(const ReaderMapping& lisp);
