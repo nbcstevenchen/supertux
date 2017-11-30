@@ -69,7 +69,7 @@ void PlayerStatus::reset()
 void
 PlayerStatus::lose_coins(int count, bool play_sound)
 {
-  coins = std::min(coins - count, 0);
+  coins = std::max(coins - count, 0);
 }
 
 void
