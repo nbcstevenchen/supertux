@@ -81,6 +81,16 @@ void
 PlayerStatus::lose_coins(int count)
 {
   coins = std::max(coins - count, 0);
+  if(!play_sound)
+    return;
+
+  static float sound_played_time = 0;
+  if(count <= 100)
+    SoundManager::current()->play("sounds/lifeup.wav");
+  else if (real_time > sound_played_time + 0.010) {
+    SoundManager::current()->play("sounds/coin.wav");
+    sound_played_time = real_time;
+  }
 }
 
 void
